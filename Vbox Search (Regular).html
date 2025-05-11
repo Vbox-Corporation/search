@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vbox Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .search-container {
+            text-align: center;
+        }
+        .search-logo {
+            font-size: 48px;
+            font-weight: bold;
+            color: #4285f4;
+            /* Removed cursor: pointer; to keep the default cursor */
+        }
+        .search-box {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+        }
+        .search-box input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #dcdcdc;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+        }
+        .search-box button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: 1px solid #dcdcdc;
+            border-left: none;
+            background-color: #4285f4;
+            color: white;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            outline: none;
+        }
+        .search-box button:hover {
+            background-color: #357ae8;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+    <script>
+        let clickCount = 0;
+        function logoClicked() {
+            clickCount++;
+            if (clickCount === 3) {
+                window.location.href = 'game.html';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="search-container">
+        <div class="search-logo" onclick="logoClicked()">Vbox Search</div>
+        <form class="search-box" action="https://www.google.com/search" method="GET">
+            <input type="text" name="q" placeholder="Search the web...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="footer">
+        &copy; 2024 Vbox
+    </div>
+</body>
+</html>
